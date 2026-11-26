@@ -1,0 +1,3 @@
+order_id,customer_id,amount,currency
+A107,C07,88.00,USD
+A108,C08,1200.00,JPY
