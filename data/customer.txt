@@ -1,0 +1,7 @@
+customer_id,region
+C07,East
+C08,West
+C09,East
+C10,North
+C11,West
+C12,North

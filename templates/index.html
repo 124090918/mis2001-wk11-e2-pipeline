@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; }
+        h1 { color: #333; }
+        h2 { margin-top: 32px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 24px; }
+        th, td { border: 1px solid #999; padding: 8px 12px; text-align: left; }
+        th { background-color: #dbeafe; }
+    </style>
+</head>
+<body>
+    <h1>Order Dashboard</h1>
+
+    <h2>Orders</h2>
+    <table>
+        <thead>
+            <tr>
+                {% for column in order_columns %}
+                <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                {% for column in order_columns %}
+                <td>{{ order[column] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Regional Average Amount CNY</h2>
+    <table>
+        <thead>
+            <tr>
+                {% for column in summary_columns %}
+                <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in summary %}
+            <tr>
+                {% for column in summary_columns %}
+                <td>{{ row[column] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
